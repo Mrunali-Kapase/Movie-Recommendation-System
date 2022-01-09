@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <h1 style="text-align:center; color:rgb(52, 241, 28)"><b> Movie Recommendation System</b></h1>
+        <br><br>
+    </head>
+
+    <body>
+        <form action="/recommend", method="POST">
+        <label for='movie_name'><h3 style="text-align:center; color:rgb(78, 238, 243)">Enter Movie Name here to get recommendation </h3></label>
+        <input type="text" name='movie_name' id='first' required=required style="background-color:rgb(174, 238, 250)" ><br><br>
+        <button type="submit" id="sub" style="background-color:rgb(25, 149, 221)" >Get Recommendation</button><br><br>
+        </form>
+
+    </body>
+    <style>
+        body {
+            background-image: url('/static/image.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            /* background-image: url("background.jpg"); */
+            /* background-color: #cccccc; */
+            /* background-color: rgb(130, 151, 155); */
+            text-align: center;
+            padding: 100px;
+        }
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sub {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 13px;
+        }
+        #sub:hover {
+            color:aqua;
+            background-color: rgb(240, 238, 248);
+        }
+       
+    </style>
+</html>

@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <h1 style="text-align:center; color:rgb(52, 241, 28)"><b> Movie Recommendation System</b></h1>
+        <br><br>
+    </head>
+
+    <body>
+        <form action="/recommend", method="POST">
+        <label for='movie_name'><h3 style="text-align:center; color:rgb(78, 238, 243)">Enter Movie Name here to get recommendation </h3></label>
+        <input type="text" name='movie_name' id='first' required=required style="background-color:rgb(174, 238, 250)" ><br><br>
+        <button type="submit" id="sub" style="background-color:rgb(25, 149, 221)" >Get Recommendation</button><br><br>
+        <!-- </form> -->
+        <h2 style="text-align:center; color:rgb(52, 241, 28); font-family: 'Rowdies', cursive;">{{recommended}}  </h2><br>
+        <div class="tab">
+        <div class="w3-card-4" >
+            <img src={{poster}} alt="Alp"  height="360" width="240" >
+            <h2 style="color:rgb(215, 224, 214); font-family: 'Rowdies', cursive;">Title: {{title}} </h2>
+            <h3 style="text-align:left; color:rgb(28, 198, 241); font-family: 'Rowdies', cursive;">Overview: {{overview}} </h3>
+            <h3 style="text-align:left;color:rgb(28, 198, 241); font-family: 'Rowdies', cursive;">Release Date: {{release_date}} </h3>
+            <h3 style="text-align:left;color:rgb(28, 198, 241); font-family: 'Rowdies', cursive;">Ratings: {{vote_average}}/10 ({{vote_count}} votes) </h3>
+            <!-- <h4 style="color:rgb(52, 241, 28); font-family: 'Rowdies', cursive;">Vote Count: {{vote_count}} </h4> -->
+            <h3 style="text-align:left;color:rgb(28, 198, 241); font-family: 'Rowdies', cursive;">Genres: {{genres}} </h3>
+        </div>
+        </div>
+        <div class="movie" style="color: #E8E8E8;">
+            <center><h2 style="font-family: 'Rowdies', cursive;">RECOMMENDED MOVIES FOR YOU</h2><h5>(Click any of the movies to get recommendation)</h5></center>
+          </div>
+        <!-- <form action="/recommend", method="POST"> -->
+        <div class="tab1cards" action="/recommend", method="POST">
+            <div class="card" onclick="recommend(this)">
+              <img src={{poster1}} alt="safari" style="width: 250px;" >
+              <h2 style="text-align:center; color:rgb(52, 241, 28)">{{recommended1}}  </h2>
+              <!-- <figcaption class="fig" name='movie_name' value={{recommended1}}>
+                <button class="card-btn btn btn-danger" onclick="recommend(this)" name='movie_name' value={{recommended1}}> Click Me </button>
+              </figcaption> -->
+            </div>
+            <div class="card">
+              <img src={{poster2}} alt="safari" style="width: 250px">
+              <h2 style="text-align:center; color:rgb(52, 241, 28)">{{recommended2}}  </h2>
+            </div>
+            <div class="card">
+              <img src={{poster3}} alt="safari" style="width: 250px">
+              <h2 style="text-align:center; color:rgb(52, 241, 28)">{{recommended3}}  </h2>
+            </div>
+            <div class="card">
+              <img src={{poster4}} alt="safari" style="width: 250px">
+              <h2 style="text-align:center; color:rgb(52, 241, 28)">{{recommended4}}  </h2>
+            </div>
+            <div class="card">
+                <img src={{poster5}} alt="safari" style="width: 250px">
+                <h2 style="text-align:center; color:rgb(52, 241, 28)">{{recommended5}}  </h2>
+              </div>
+          </div>
+        </form>
+    </body>
+    <style>
+        body {
+            background-image: url('/static/image.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            /* background-image: url("background.jpg"); */
+            /* background-color: #cccccc; */
+            /* background-color: rgb(130, 151, 155); */
+            text-align: center;
+            padding: 100px;
+        }
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sub {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 13px;
+        }
+        #sub:hover {
+            color:aqua;
+            background-color: rgb(240, 238, 248);
+        }
+        .card {
+            padding: 16px;
+            text-align: center;
+        }
+
+       .tab1cards {
+            display: flex;
+            flex-direction: row;
+        }
+        .tab {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+
+</html>
